@@ -1,0 +1,25 @@
+<% @body_class = "sidebar" %>
+
+<% content_for :sidebar, sidebar_turbo_frame_tag(src: user_sidebar_path) %>
+
+<section class="pad">
+  <h1 class="txt-large">Library</h1>
+  <p class="txt-subtle">Recipes, SOPs, and training docs organized for your team.</p>
+
+  <div class="grid gap" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));">
+    <article class="metric-card">
+      <h2 class="txt-medium">Beverage Recipes</h2>
+      <p class="txt-subtle">House cold brew, seasonal lattes, signature drinks.</p>
+    </article>
+    <article class="metric-card">
+      <h2 class="txt-medium">Kitchen SOPs</h2>
+      <p class="txt-subtle">Prep guides, inventory, sanitation checklists.</p>
+    </article>
+    <article class="metric-card">
+      <h2 class="txt-medium">Training</h2>
+      <p class="txt-subtle">Onboarding, service standards, role guides.</p>
+    </article>
+  </div>
+</section>
+
+

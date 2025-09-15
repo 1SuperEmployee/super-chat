@@ -88,6 +88,10 @@ Rails.application.routes.draw do
     delete :clear, on: :collection
   end
 
+  # Mission Control (Jerry) and Library
+  get "mission_control", to: "mission_control#show", as: :mission_control
+  get "library", to: "library#index", as: :library
+
   resource :unfurl_link, only: :create
 
   get "webmanifest"    => "pwa#manifest"

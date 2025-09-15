@@ -38,6 +38,22 @@
 
     <nav id="nav">
       <%= yield :nav %>
+
+      <%# Global nav for radical UI experiment %>
+      <div class="flex align-center gap" style="margin-inline-start:auto; pointer-events:auto;">
+        <%= link_to root_path, class: "btn btn--plain txt-medium" do %>
+          Chats
+        <% end %>
+        <%= link_to mission_control_path, class: "btn btn--plain txt-medium" do %>
+          Mission Control
+        <% end %>
+        <%= link_to library_path, class: "btn btn--plain txt-medium" do %>
+          Library
+        <% end %>
+        <%= link_to user_profile_path, class: "btn btn--plain txt-medium" do %>
+          Settings
+        <% end %>
+      </div>
     </nav>
 
     <% if notice = flash[:notice] || flash[:alert] %>

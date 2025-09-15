@@ -74,3 +74,15 @@
     --left-offset: var(--inline-space);
   }
 }
+
+/* Global nav styles */
+#nav .btn--plain.txt-medium {
+  color: var(--color-text);
+  font-weight: 500;
+  padding-inline: 0.5em;
+}
+
+#nav .btn--plain.txt-medium:hover {
+  background-color: var(--color-message-bg);
+  border-radius: 0.5em;
+}
