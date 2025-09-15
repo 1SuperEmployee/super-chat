@@ -11,6 +11,14 @@
   row-gap: var(--block-space);
   z-index: 2;
 
+  /* Subtle blur/translucent header background on mobile */
+  @media (max-width: 100ch) {
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    background-color: var(--color-surface-translucent);
+    border-bottom: 1px solid var(--color-border-dark);
+  }
+
   &:has(.room--current) {
     padding-inline: var(--inline-space);
 
@@ -44,6 +52,13 @@
       }
     }
   }
+}
+
+/* Keep the current room chip visually neutral in the header */
+.room--current {
+  --btn-background: var(--color-message-bg);
+  --btn-color: var(--color-text);
+  --btn-border-color: transparent;
 }
 
 .skip-navigation {

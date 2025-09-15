@@ -3,9 +3,9 @@
 
   <label class="flex flex-column gap full-width" style="--row-gap: 0.5em">
     <strong id="invite_label" class="invite-label">Share to invite more people</strong>
-    <span class="flex align-center gap input input--actor fill-white">
+    <span class="flex align-center gap input input--actor fill-message txt-reversed" style="--input-border-color: var(--color-border)">
       <%= image_tag "person-add.svg", aria: { hidden: "true" }, size: 20, class: "colorize--black" %>
-      <input type="text" class="input" id="invite_url" value="<%= url %>" aria-labelledby="invite_label" readonly>
+      <input type="text" class="input txt-reversed" id="invite_url" value="<%= url %>" aria-labelledby="invite_label" readonly>
     </span>
   </label>
 
@@ -20,7 +20,7 @@
       <%= image_tag "copy-paste.svg", aria: { hidden: "true" }, size: 20, class: "colorize--black" %>
     <% end %>
 
-    <%= web_share_session_button(url, "Link to join Campfire", "Hit this link to join me in Campfire and start chatting.") do %>
+    <%= web_share_session_button(url, "Link to join Super Chat", "Hit this link to join me in Super Chat and start chatting.") do %>
       <span class="for-screen-reader">Share join link</span>
       <%= image_tag "share.svg", aria: { hidden: "true" }, size: 20, class: "colorize--black" %>
     <% end %>

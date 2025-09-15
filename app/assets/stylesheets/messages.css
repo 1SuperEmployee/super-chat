@@ -167,6 +167,9 @@
   text-align: center;
   text-transform: uppercase;
   visibility: hidden;
+  position: static; /* disable stickiness to avoid overlay blending */
+  top: auto;
+  z-index: auto;
 
   time,
   span {
@@ -185,6 +188,32 @@
     display: grid;
     visibility: visible;
   }
+}
+
+/* Hover tint removed for readability across themes */
+
+/* Compact density mode */
+body.density--compact .messages {
+  --message-space: 0.7em;
+}
+
+body.density--compact .message {
+  --content-padding-block: 0.4rem;
+  --content-padding-inline: var(--inline-space);
+}
+
+body.density--compact .message__author,
+body.density--compact .message__permalink {
+  font-size: 0.75rem;
+}
+
+/* Subtle separators between messages */
+.messages .message + .message {
+  border-top: 1px solid var(--color-border);
+}
+
+.messages .message--first-of-day {
+  border-top: none;
 }
 
 .message__avatar {
@@ -275,7 +304,7 @@
 
 .message__body-content {
   background-color: var(--message-background, var(--color-message-bg));
-  border-radius: 0.66em;
+  border-radius: 1em;
   color: var(--message-color, var(--color-text));
   font-weight: 400;
   inline-size: fit-content;
@@ -309,6 +338,17 @@
   &:has(.message__pending-upload) {
     padding: 0;
   }
+}
+
+/* Distinguished bubble colors: me vs others */
+.message:not(.message--me) .message__body-content {
+  --message-background: oklch(var(--lch-gray));
+  --message-color: var(--color-text);
+}
+
+.message.message--me .message__body-content {
+  --message-background: var(--color-text);
+  --message-color: var(--color-text-reversed);
 }
 
 .message__attachment {

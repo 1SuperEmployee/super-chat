@@ -1,6 +1,6 @@
-# Campfire
+# Super Chat
 
-Campfire is web-based chat application. It supports many of the features you'd
+Super Chat is web-based chat application. It supports many of the features you'd
 expect, including:
 
 - Multiple rooms, with access controls
@@ -11,9 +11,15 @@ expect, including:
 - @mentions
 - API, with support for bot integrations
 
-Campfire is single-tenant: any rooms designated "public" will be accessible by
+Super Chat is single-tenant: any rooms designated "public" will be accessible by
 all users in the system. To support entirely distinct groups of customers, you
 would deploy multiple instances of the application.
+
+## Documentation
+
+- UI customization: `docs/UI-Customization.md`
+- UI enhancements: `docs/UI-Enhancements.md`
+- OpenAI integration: `docs/OpenAI-Integration.md`
 
 ## Running in development
 
@@ -22,7 +28,7 @@ would deploy multiple instances of the application.
 
 ## Deploying with Docker
 
-Campfire's Docker image contains everything needed for a fully-functional,
+Super Chat's Docker image contains everything needed for a fully-functional,
 single-machine deployment. This includes the web app, background jobs, caching,
 file serving, and SSL.
 

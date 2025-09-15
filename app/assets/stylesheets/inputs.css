@@ -37,8 +37,8 @@
 }
 
 .input--transparent {
-  --input-border-color: currentColor;
-  --input-color: currentColor;
+  --input-border-color: var(--color-border);
+  --input-color: var(--color-text);
   --input-background: transparent;
 }
 
@@ -84,7 +84,7 @@
     :-webkit-autofill:hover,
     :-webkit-autofill:focus)) {
     -webkit-text-fill-color: var(--color-text);
-    -webkit-box-shadow: 0 0 0px 1000px var(--color-selected) inset;
+    -webkit-box-shadow: 0 0 0px 1000px var(--color-bg) inset;
   }
 
   .btn:not(.avatar) {

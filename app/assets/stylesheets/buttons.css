@@ -31,13 +31,8 @@
       max-inline-size: unset;
     }
 
-    img:not([class]) {
-      filter: invert(0);
-
-      @media (prefers-color-scheme: dark) {
-        filter: invert(100%);
-      }
-    }
+    /* Keep icons consistent regardless of color scheme; match button bg instead */
+    img:not([class]) { filter: none; }
   }
 
   /* Circle buttons */
@@ -138,8 +133,9 @@
 
 /* Variants */
 .btn--reversed {
-  --btn-background: var(--color-text);
-  --btn-color: var(--color-text-reversed);
+  --btn-background: var(--color-button);
+  --btn-color: var(--color-button-text);
+  --btn-border-color: var(--color-button);
 }
 
 .btn--negative {
@@ -152,15 +148,11 @@
   --btn-border-color: transparent;
   --hover-size: 0;
   --hover-filter: brightness(0.7);
-
-  img:not(.avatar) {
-    filter: invert(100%);
-
-    @media (prefers-color-scheme: dark) {
-      filter: invert(0%);
-    }
-  }
 }
+
+/* Keep icons unmodified to avoid unwanted inversion on tinted backgrounds */
+.btn--reversed img:not(.avatar),
+.btn--negative img:not(.avatar) { filter: none; }
 
 .btn--success {
   animation: success 1s ease-out;

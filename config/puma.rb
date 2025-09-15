@@ -15,9 +15,10 @@ threads min_threads_count, max_threads_count
 #
 worker_timeout 3600 if ENV.fetch("RAILS_ENV", "development") == "development"
 
-# Bind http listener.
+# Bind http listener. In production this should only listen on loopback; Thruster handles public ports.
 PORT=ENV.fetch("PORT", 3000)
-bind "tcp://0.0.0.0:#{PORT}"
+bind "tcp://127.0.0.1:#{PORT}"
+bind "tcp://[::1]:#{PORT}"
 
 # Specifies the `environment` that Puma will run in.
 #

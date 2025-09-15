@@ -1,15 +1,3 @@
-.colorize--white {
-  filter: invert(100%);
+.colorize--white { filter: none; }
 
-  @media (prefers-color-scheme: dark) {
-    filter: invert(0%);
-  }
-}
-
-.colorize--black {
-  filter: invert(0%);
-
-  @media (prefers-color-scheme: dark) {
-    filter: invert(100%);
-  }
-}
+.colorize--black { filter: none; }

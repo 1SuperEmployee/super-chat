@@ -36,7 +36,7 @@
         <% end %>
       </div>
 
-      <%= link_to new_rooms_open_path, class: "rooms__new-btn btn room align-center gap txt-reversed", aria: { label: "New Chat Room" } do %>
+      <%= link_to new_rooms_open_path, class: "rooms__new-btn btn room align-center gap", aria: { label: "New Chat Room" } do %>
         <%= image_tag "add.svg", size: 20, aria: { hidden: "true" }, style: "view-transition-name: new-room" %>
       <% end %>
     </div>
@@ -53,7 +53,7 @@
       <span class="for-screen-reader">My Settings</span>
     <% end %>
 
-    <%= link_to edit_account_path, class: "btn align-center gap txt-reversed sidebar__tool" do %>
+    <%= link_to edit_account_path, class: "btn align-center gap sidebar__tool" do %>
       <%= image_tag "settings.svg", size: 20, aria: { hidden: "true" }, style: "view-transition-name: account-settings" %>
       <span class="for-screen-reader">Account Settings</span>
     <% end %>

@@ -8,6 +8,7 @@
   block-size: 100dvh;
   max-block-size: 100dvh;
   padding-block-end: var(--sidebar-tools-height);
+  background-color: oklch(var(--lch-gray) / 0.9);
 }
 
 .sidebar__tools {
@@ -208,7 +209,7 @@
 
 .room {
   background-color: var(--color-text-reversed);
-  color: var(--color-text);
+  color: var(--color-selected-text);
   font-weight: normal;
   justify-content: start;
   margin-inline-end: auto;
@@ -238,6 +239,7 @@
   min-block-size: var(--btn-size);
 
   .room__contents {
+    color: var(--color-text);
     .account-has-logo & {
       --num-buttons: 2;
     }

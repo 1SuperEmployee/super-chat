@@ -1,0 +1,23 @@
+:root {
+  /* Layout spacing */
+  --inline-space: 0.9rem;
+  --inline-space-half: calc(var(--inline-space) / 2);
+  --inline-space-double: calc(var(--inline-space) * 2);
+  --block-space: 1rem;
+  --block-space-half: calc(var(--block-space) / 2);
+
+  /* Component radii */
+  --radius-pill: 2em;
+  --radius-card: 0.66em;
+
+  /* Elevation */
+  --shadow-1: 0 1px 2px oklch(0% 0 0 / 0.06);
+  --shadow-2: 0 2px 8px oklch(0% 0 0 / 0.08);
+}
+
+/* Contrast helpers for text on surfaces */
+.surface--neutral { --surface-bg: var(--color-bg); --surface-fg: var(--color-text); }
+.surface--inverse { --surface-bg: var(--color-text); --surface-fg: var(--color-text-reversed); }
+.surface--accent { --surface-bg: var(--color-selected); --surface-fg: var(--color-selected-text); }
+
+

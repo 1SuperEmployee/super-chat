@@ -101,6 +101,19 @@ export default class extends Controller {
       .then(subscription => {
         this.#syncPushSubscription(subscription)
         this.dispatch("ready")
+
+        // Ensure the involvement turbo-frame reflects the new subscription state immediately
+        const frame = this.element.querySelector("turbo-frame")
+        if (frame) {
+          const url = frame.dataset.turboFrameUrlParam
+          if (url && !frame.src) {
+            // If the frame hasn't been loaded yet, set its src to load contents
+            frame.src = url
+          } else if (typeof frame.reload === "function") {
+            // Otherwise, explicitly reload to fetch updated contents
+            frame.reload()
+          }
+        }
       })
   }
 
