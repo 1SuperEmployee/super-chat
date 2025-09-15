@@ -8,7 +8,10 @@
   block-size: 100dvh;
   max-block-size: 100dvh;
   padding-block-end: var(--sidebar-tools-height);
-  background-color: oklch(var(--lch-gray) / 0.9);
+  background-color: var(--color-surface-translucent);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border-right: 1px solid var(--color-border-dark);
 }
 
 .sidebar__tools {
@@ -195,10 +198,11 @@
 
 /* Rooms */
 .rooms {
-  --column-gap: 0.5em;
-  --row-gap: 0.5em;
+  --column-gap: 0.75em;
+  --row-gap: 0.75em;
 
   padding-inline: var(--sidebar-inline-space);
+  padding-block: var(--block-space);
 }
 
 .rooms__new-btn {
@@ -208,25 +212,36 @@
 }
 
 .room {
-  background-color: var(--color-text-reversed);
-  color: var(--color-selected-text);
-  font-weight: normal;
+  background-color: transparent;
+  color: var(--color-text);
+  font-weight: 500;
   justify-content: start;
   margin-inline-end: auto;
   max-inline-size: 100%;
+  border-radius: 0.75em;
+  transition: all 0.2s ease;
+  font-size: 0.95rem;
 
   .searches-list & {
-    border-radius: 0.5em;
+    border-radius: 0.75em;
+  }
+
+  &:hover {
+    background-color: var(--color-message-bg);
+    transform: translateX(4px);
   }
 
   &.unread {
-    --btn-border-color: var(--color-text);
-    --hover-color: var(--color-text);
+    --btn-border-color: var(--color-selected);
+    --hover-color: var(--color-selected);
+    background-color: oklch(var(--lch-super-lime-accent) / 0.1);
+    border: 1px solid oklch(var(--lch-super-lime-accent) / 0.3);
 
     font-weight: 600;
 
-    &:not(:hover) {
-      box-shadow: 0 0 0 1px var(--color-text);
+    &:hover {
+      background-color: oklch(var(--lch-super-lime-accent) / 0.15);
+      transform: translateX(4px);
     }
   }
 }

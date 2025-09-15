@@ -1,0 +1,167 @@
+/* Jerry's Mission Control Hero Card */
+.hero-card {
+  margin-block: var(--block-space-double);
+}
+
+.hero-card__content {
+  background: linear-gradient(135deg,
+    oklch(var(--lch-super-green-dark) / 0.05) 0%,
+    oklch(var(--lch-super-lime-accent) / 0.03) 100%);
+  border: 1px solid var(--color-border-dark);
+  border-radius: 1.5em;
+  padding: var(--block-space-double);
+  max-inline-size: 90%;
+  box-shadow:
+    0 4px 20px oklch(var(--lch-always-black) / 0.08),
+    0 1px 3px oklch(var(--lch-always-black) / 0.12);
+}
+
+.hero-card__header {
+  margin-block-end: var(--block-space-double);
+}
+
+.hero-card__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 4em;
+  height: 4em;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-button), var(--color-selected));
+  margin-block-end: var(--block-space);
+  box-shadow: 0 4px 12px oklch(var(--lch-super-green-dark) / 0.3);
+}
+
+.hero-card__title {
+  margin-block-end: 0.25em;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.hero-card__subtitle {
+  margin: 0;
+  font-weight: 400;
+  color: var(--color-text-subtle);
+}
+
+.hero-card__metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--block-space);
+  margin-block-end: var(--block-space-double);
+}
+
+.metric-card {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border-dark);
+  border-radius: 1em;
+  padding: var(--block-space);
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.metric-card:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 8px 25px oklch(var(--lch-always-black) / 0.1),
+    0 2px 8px oklch(var(--lch-always-black) / 0.15);
+}
+
+.metric-card__value {
+  margin-block-end: 0.25em;
+  background: linear-gradient(135deg, var(--color-text), var(--color-selected));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.metric-card__label {
+  margin-block-end: 0.5em;
+  font-weight: 500;
+}
+
+.metric-card__change {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25em;
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0.25em 0.5em;
+  border-radius: 0.5em;
+}
+
+.metric-card__change--positive {
+  background-color: oklch(var(--lch-green) / 0.1);
+  color: var(--color-positive);
+}
+
+.metric-card__change--neutral {
+  background-color: var(--color-border-dark);
+  color: var(--color-text-subtle);
+}
+
+.metric-card__arrow {
+  font-size: 1em;
+}
+
+.hero-card__actions {
+  display: flex;
+  gap: var(--block-space);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hero-card__action-btn {
+  --btn-background: var(--color-button);
+  --btn-color: var(--color-button-text);
+  --btn-border-color: transparent;
+  font-weight: 600;
+  padding: 0.75em 1.5em;
+  border-radius: 0.75em;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px oklch(var(--lch-super-green-dark) / 0.2);
+}
+
+.hero-card__action-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px oklch(var(--lch-super-green-dark) / 0.3);
+}
+
+.btn--secondary {
+  --btn-background: transparent;
+  --btn-color: var(--color-text);
+  --btn-border-color: var(--color-border-dark);
+}
+
+.btn--secondary:hover {
+  --btn-background: var(--color-message-bg);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-card__metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-card__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-card__action-btn {
+    width: 100%;
+  }
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+  .hero-card__content {
+    background: linear-gradient(135deg,
+      oklch(var(--lch-super-green-dark) / 0.1) 0%,
+      oklch(var(--lch-super-lime-accent) / 0.05) 100%);
+  }
+
+  .metric-card {
+    background: var(--color-bg-subtle);
+  }
+}

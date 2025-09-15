@@ -1,0 +1,53 @@
+<% if @room == Room.original %>
+  <div class="hero-card message txt-align-center center">
+    <div class="message__body center">
+      <div class="message__body-content hero-card__content">
+        <div class="hero-card__header">
+          <div class="hero-card__icon">
+            <%= image_tag "messages.svg", size: 32, class: "colorize--brand" %>
+          </div>
+          <h2 class="hero-card__title txt-large txt-medium">Jerry's Mission Control</h2>
+          <p class="hero-card__subtitle txt-subtle">Your AI General Manager</p>
+        </div>
+
+        <div class="hero-card__metrics">
+          <div class="metric-card">
+            <div class="metric-card__value txt-x-large txt-medium">$2,847</div>
+            <div class="metric-card__label txt-small txt-subtle">Today's Profit</div>
+            <div class="metric-card__change metric-card__change--positive">
+              <span class="metric-card__arrow">↗</span>
+              <span>+12.5%</span>
+            </div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-card__value txt-x-large txt-medium">94%</div>
+            <div class="metric-card__label txt-small txt-subtle">Staff Efficiency</div>
+            <div class="metric-card__change metric-card__change--positive">
+              <span class="metric-card__arrow">↗</span>
+              <span>+3.2%</span>
+            </div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-card__value txt-x-large txt-medium">23</div>
+            <div class="metric-card__label txt-small txt-subtle">Orders Today</div>
+            <div class="metric-card__change metric-card__change--neutral">
+              <span>=</span>
+              <span>Same as yesterday</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-card__actions">
+          <button class="btn btn--primary hero-card__action-btn">
+            View Full Dashboard
+          </button>
+          <button class="btn btn--secondary hero-card__action-btn">
+            Send Team Update
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
