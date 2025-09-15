@@ -14,6 +14,8 @@
   box-shadow:
     0 4px 20px oklch(var(--lch-always-black) / 0.08),
     0 1px 3px oklch(var(--lch-always-black) / 0.12);
+  view-transition-name: hero-card;
+  animation: hero-in 300ms ease-out both;
 }
 
 .hero-card__header {
@@ -163,5 +165,16 @@
 
   .metric-card {
     background: var(--color-bg-subtle);
+  }
+}
+
+@keyframes hero-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.99);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
 }

@@ -6,19 +6,33 @@
   <h1 class="txt-large">Library</h1>
   <p class="txt-subtle">Recipes, SOPs, and training docs organized for your team.</p>
 
+  <div class="pad-inline" style="margin-block: var(--block-space);">
+    <sl-tag size="medium" variant="success">Beverages</sl-tag>
+    <sl-tag size="medium" variant="primary">Kitchen</sl-tag>
+    <sl-tag size="medium" variant="neutral">Training</sl-tag>
+  </div>
+
   <div class="grid gap" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));">
-    <article class="metric-card">
+    <sl-details summary="Beverage Recipes" open>
+      <article class="metric-card">
       <h2 class="txt-medium">Beverage Recipes</h2>
       <p class="txt-subtle">House cold brew, seasonal lattes, signature drinks.</p>
-    </article>
-    <article class="metric-card">
+      </article>
+    </sl-details>
+
+    <sl-details summary="Kitchen SOPs">
+      <article class="metric-card">
       <h2 class="txt-medium">Kitchen SOPs</h2>
       <p class="txt-subtle">Prep guides, inventory, sanitation checklists.</p>
-    </article>
-    <article class="metric-card">
+      </article>
+    </sl-details>
+
+    <sl-details summary="Training">
+      <article class="metric-card">
       <h2 class="txt-medium">Training</h2>
       <p class="txt-subtle">Onboarding, service standards, role guides.</p>
-    </article>
+      </article>
+    </sl-details>
   </div>
 </section>
 

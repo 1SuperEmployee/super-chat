@@ -25,6 +25,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+    <!-- Shoelace Web Components (modern, accessible UI library) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.15.0/cdn/themes/light.css" />
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.15.0/cdn/shoelace-autoloader.js"></script>
+
     <%= stylesheet_link_tag :all, "data-turbo-track": "reload" %>
     <%= custom_styles_tag %>
 
@@ -36,7 +40,7 @@
   <body class="<%= body_classes %>" data-controller="local-time lightbox">
     <a href="#main-content" class="skip-navigation btn">Skip to main content</a>
 
-    <nav id="nav">
+    <nav id="nav" data-controller="drawer">
       <%= yield :nav %>
 
       <%# Global nav for radical UI experiment %>
@@ -53,6 +57,10 @@
         <%= link_to user_profile_path, class: "btn btn--plain txt-medium #{current_page?(user_profile_path) ? 'nav-active' : ''}" do %>
           Settings
         <% end %>
+
+        <button class="btn btn--plain" type="button" data-action="drawer#open" aria-label="Open menu">
+          ☰
+        </button>
       </div>
     </nav>
 
@@ -80,6 +88,16 @@
     <aside id="sidebar" data-controller="toggle-class" data-toggle-class-toggle-class="open">
       <%= yield :sidebar %>
     </aside>
+
+    <sl-drawer label="Menu" placement="start" data-drawer-target="drawer">
+      <nav class="flex flex-column gap pad">
+        <%= link_to "Chats", root_path, class: "btn btn--plain txt-medium" %>
+        <%= link_to "Mission Control", mission_control_path, class: "btn btn--plain txt-medium" %>
+        <%= link_to "Library", library_path, class: "btn btn--plain txt-medium" %>
+        <%= link_to "Settings", user_profile_path, class: "btn btn--plain txt-medium" %>
+      </nav>
+      <sl-button slot="footer" variant="primary" onclick="this.closest('sl-drawer').hide()">Close</sl-button>
+    </sl-drawer>
 
     <%= render "layouts/lightbox" %>
 
