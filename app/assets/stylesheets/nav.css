@@ -17,6 +17,8 @@
     backdrop-filter: blur(12px);
     background-color: var(--color-surface-translucent);
     border-bottom: 1px solid var(--color-border-dark);
+    inset-inline-start: 0;
+    inset-inline-end: 0;
   }
 
   &:has(.room--current) {
@@ -83,6 +85,12 @@
 }
 
 #nav .btn--plain.txt-medium:hover {
+  background-color: var(--color-message-bg);
+  border-radius: 0.5em;
+}
+
+/* Active state */
+.nav-active {
   background-color: var(--color-message-bg);
   border-radius: 0.5em;
 }
